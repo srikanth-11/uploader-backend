@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "*",
+    origin: "https://sri-uploader.netlify.app",
   })
 );
 const oAuth2Client = new google.auth.OAuth2(
@@ -35,7 +35,7 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
-origin = "http://localhost:3000";
+origin = "https://sri-uploader.netlify.app";
 
 const s3 = new AWS.S3({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
